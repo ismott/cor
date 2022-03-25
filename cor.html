@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cor.css">
+    <link rel="js" href="cor.js">
+    <script src="js/myscript.js"></script>
+    <title>Cor</title>
+</head>
+<body>
+    <div id="box">
+        <label for="colorPicker">Border color:</label>
+        <input type="color" value="#8888ff" id="colorPicker">
+        <p id="output"></p>
+      </div>
+      <script>
+            let colorPicker = document.getElementById("colorPicker");
+            let box = document.getElementById("box");
+            let output = document.getElementById("output");
+
+            box.style.borderColor = colorPicker.value;
+
+            colorPicker.addEventListener("input", function(event) {
+            box.style.borderColor = event.target.value;
+            }, false);
+
+            colorPicker.addEventListener("change", function(event) {
+            output.innerText = "Cor escolida " + colorPicker.value + ".";
+            }, false);
+      </script>
+</body>
+</html>
